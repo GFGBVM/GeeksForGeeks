@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 
 export default function About() {
@@ -10,9 +9,8 @@ export default function About() {
     >
       {/* Section Heading */}
       <h1 className="text-3xl md:text-4xl font-semibold text-[#0F9D58] dark:text-[#34A853] text-center mb-12">
-  About Us
-</h1>
-
+        About Us
+      </h1>
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6 lg:px-8">
         {/* Image */}

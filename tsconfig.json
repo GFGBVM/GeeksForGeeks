@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "src/app/(main)/layout.jsx", "src/app/(main)/page.jsx", "src/app/BRTeam/layout.jsx", "src/app/BRTeam/page.jsx", "src/app/components/sections/About.jsx", "src/app/components/layout/BRTeamFooter.jsx", "src/app/components/layout/BRNavbar.jsx", "src/app/components/sections/Event.jsx", "src/app/components/sections/Contact.jsx", "src/app/components/ui/GFGSeparator.jsx", "src/app/components/layout/Footer.jsx", "src/app/components/sections/Hero.jsx", "src/app/components/layout/Navbar.jsx", "src/app/components/ui/IntroLoader.jsx", "src/app/components/cards/Team.jsx", "src/app/hooks/usemobile.js", "src/app/layout.jsx"  ],
   "exclude": [
     "node_modules"
   ]

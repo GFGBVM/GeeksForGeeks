@@ -1,6 +1,6 @@
 
-import MemberCard from "@/app/components/Team";
-import GFGSeparator from "../components/GFGSeparator";
+import MemberCard from "@/app/components/cards/Team";
+import GFGSeparator from "../components/ui/GFGSeparator";
 
 export default function BRTeamPage() {
   const brMembers = [

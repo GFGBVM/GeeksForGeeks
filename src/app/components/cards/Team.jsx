@@ -1,20 +1,9 @@
 "use client";
 
-import React from "react";
 import { Linkedin, Instagram, Github, Globe } from "lucide-react";
 import Image from "next/image";
 
-interface MemberCardProps {
-  name: string;
-  role: string;
-  image?: string;
-  instagram?: string;
-  linkedin?: string;
-  github?: string;
-  website?: string;
-}
-
-const MemberCard: React.FC<MemberCardProps> = ({
+const MemberCard = ({
   name,
   role,
   image,
@@ -44,8 +33,6 @@ const MemberCard: React.FC<MemberCardProps> = ({
             src={image}
             alt={name}
             fill
-            priority={false}
-            unoptimized={false}
             className="
               object-cover
               transition-transform duration-500
@@ -74,20 +61,11 @@ const MemberCard: React.FC<MemberCardProps> = ({
 
       {/* Content */}
       <div className="p-4 sm:p-5 text-center">
-        <h2
-          className="
-            text-base font-semibold
-            text-neutral-900
-            transition-colors
-            group-hover:text-[#0F9D58]
-          "
-        >
+        <h2 className="text-base font-semibold text-neutral-900 transition-colors group-hover:text-[#0F9D58]">
           {name}
         </h2>
 
-        <p className="text-sm text-neutral-600 mt-1">
-          {role}
-        </p>
+        <p className="text-sm text-neutral-600 mt-1">{role}</p>
 
         {/* Social Icons */}
         <div className="flex justify-center gap-3 mt-4">
@@ -121,15 +99,7 @@ export default MemberCard;
 
 /* ---------- Social Icon ---------- */
 
-function SocialIcon({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
+function SocialIcon({ href, label, children }) {
   return (
     <a
       href={href}

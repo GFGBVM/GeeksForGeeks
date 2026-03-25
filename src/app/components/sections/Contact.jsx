@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import {
   IconBrandFacebook,
   IconBrandTwitter,
@@ -15,6 +14,7 @@ export default function Contact() {
       className="py-20 bg-gray-50 dark:bg-neutral-900 font-roboto"
     >
       <div className="max-w-4xl mx-auto px-6 text-center">
+        
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-semibold text-[#0F9D58] dark:text-[#34A853] mb-4">
           Contact Us
@@ -60,15 +60,7 @@ export default function Contact() {
 
 /* ---------- Social Icon Wrapper ---------- */
 
-function SocialLink({
-  href,
-  label,
-  children,
-}: {
-  href: string;
-  label: string;
-  children: React.ReactNode;
-}) {
+function SocialLink({ href, label, children }) {
   return (
     <a
       href={href}

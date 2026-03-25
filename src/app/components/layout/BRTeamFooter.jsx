@@ -1,15 +1,14 @@
-// src/components/Footer.tsx
-import React from "react";
 import { Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
+import Link from "next/link";
 
-const Footer: React.FC = () => {
+const BRFooter = () => {
   return (
     <footer className="bg-green-800 text-white py-15 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        
         {/* About Section */}
         <div>
           <div className="flex items-center mb-4 space-x-2">
-            
             <span className="text-xl font-bold">GFG BVM</span>
           </div>
           <p className="text-sm leading-relaxed text-justify">
@@ -28,23 +27,25 @@ const Footer: React.FC = () => {
             <br />
             Post Box No. 20, Vallabh Vidyanagar, Anand
           </p>
+
           <a
             href="mailto:geeksforgeeksbvm@bvmengineering.ac.in"
             className="block mt-2 text-sm text-green-300 hover:underline"
           >
             geeksforgeeksbvm@bvmengineering.ac.in
           </a>
-          <p className="text-sm mt-2">
-  <span className="font-medium">📞 Kavya Zinzuvadiya</span> (Chairperson)
-  <br />
-  <span className="text-green-300">+91 70690 17310</span>
-</p>
 
-<p className="text-sm mt-3">
-  <span className="font-medium">📞 Vihaa Shah</span> (Vice-Chairperson)
-  <br />
-  <span className="text-green-300">+91 94271 07324</span>
-</p>
+          <p className="text-sm mt-2">
+            <span className="font-medium">📞 Kavya Zinzuvadiya</span> (Chairperson)
+            <br />
+            <span className="text-green-300">+91 70690 17310</span>
+          </p>
+
+          <p className="text-sm mt-3">
+            <span className="font-medium">📞 Vihaa Shah</span> (Vice-Chairperson)
+            <br />
+            <span className="text-green-300">+91 94271 07324</span>
+          </p>
         </div>
 
         {/* Links */}
@@ -52,29 +53,9 @@ const Footer: React.FC = () => {
           <h3 className="font-semibold text-lg mb-3">Links</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#Home" className="hover:text-green-300 transition-colors">
-                HOME
-              </a>
-            </li>
-            <li>
-              <a href="#About" className="hover:text-green-300 transition-colors">
-                ABOUT US
-              </a>
-            </li>
-            <li>
-              <a href="#Event" className="hover:text-green-300 transition-colors">
-                EVENTS
-              </a>
-            </li>
-            <li>
-              <a href="#Team" className="hover:text-green-300 transition-colors">
-                TEAM
-              </a>
-            </li>
-            <li>
-              <a href="#Contact" className="hover:text-green-300 transition-colors">
-                CONTACT US
-              </a>
+              <Link href="/" className="text-white transition">
+                Home
+              </Link>
             </li>
           </ul>
         </div>
@@ -89,25 +70,27 @@ const Footer: React.FC = () => {
             >
               <Facebook size={20} />
             </a>
+
             <a
               href="https://x.com/GfgBvm"
               className="p-2 rounded-full bg-green-700 hover:bg-green-600 transition-colors"
             >
               <Twitter size={20} />
             </a>
+
             <a
               href="https://www.linkedin.com/in/gfg-student-chapter-bvm-643736253/"
               className="p-2 rounded-full bg-green-700 hover:bg-green-600 transition-colors"
             >
               <Linkedin size={20} />
-            </a> 
+            </a>
+
             <a
               href="https://www.instagram.com/gfgbvm/"
               className="p-2 rounded-full bg-green-700 hover:bg-green-600 transition-colors"
             >
-            <Instagram size={20} />
+              <Instagram size={20} />
             </a>
-            
           </div>
         </div>
       </div>
@@ -136,4 +119,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default BRFooter;

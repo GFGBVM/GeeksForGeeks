@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { createPortal } from "react-dom";
 
@@ -10,23 +10,17 @@ const events = [
     id: 1,
     title: "SkillUp101 - From Code to Confidence",
     shortDesc: "Hands-on technical skill workshop",
-
     fullDesc:
       "SkillUp101-From Code to Confidence is an immersive learning experience designed to help students transition from code to confidence. The event focuses on communication, resume building, LinkedIn optimization, and problem-solving skills essential for placements.",
-
     date: "Wednesday, 12th November 2025",
     time: "3:00 PM – 5:00 PM",
     venue: "B Block, Room 401, Birla Vishvakarma Mahavidyalaya",
-
     speakers: [
-  "Aditya Desai (4th Year CP) – Professional Communication",
-  "Kavya Zinzuvadiya (2nd Year IT) – Data Structures",
-  "Vihaa Shah (3rd Year IT) – Resume Building",
-  "Parv Luhar (2nd Year CP) – LinkedIn & Personal Branding",
-],
-
-
-   
+      "Aditya Desai (4th Year CP) – Professional Communication",
+      "Kavya Zinzuvadiya (2nd Year IT) – Data Structures",
+      "Vihaa Shah (3rd Year IT) – Resume Building",
+      "Parv Luhar (2nd Year CP) – LinkedIn & Personal Branding",
+    ],
     images: [
       "/events/skillup101.jpeg",
       "/events/skillup101-5.jpeg",
@@ -34,15 +28,13 @@ const events = [
       "/events/skillup101-4.jpeg",
       "/events/skillup101-1.jpg",
       "/events/skillup101-2.jpg",
-      
     ],
-
     report: "/reports/Skillup-101reportfinal.pdf",
   },
 ];
 
 export default function EventPage() {
-  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+  const [selectedEvent, setSelectedEvent] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animate, setAnimate] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -60,24 +52,22 @@ export default function EventPage() {
   }, [selectedEvent]);
 
   const next = () =>
-    setCurrentIndex((i: number) =>
+    setCurrentIndex((i) =>
       i === selectedEvent.images.length - 1 ? 0 : i + 1
     );
 
   const prev = () =>
-    setCurrentIndex((i: number) =>
+    setCurrentIndex((i) =>
       i === 0 ? selectedEvent.images.length - 1 : i - 1
     );
 
   return (
-    <section  className="py-15  bg-gray-50 font-roboto">
+    <section className="py-15 bg-gray-50 font-roboto">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Title */}
-        <h1 className="text-3xl md:text-4xl  font-semibold text-[#0F9D58] text-center mb-12">
+        <h1 className="text-3xl md:text-4xl font-semibold text-[#0F9D58] text-center mb-12">
           Events
         </h1>
 
-        {/* Event Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event) => (
             <div
@@ -98,30 +88,26 @@ export default function EventPage() {
               </div>
 
               <h3 className="text-lg font-semibold text-[#0F9D58] mb-1">
-  {event.title}
-</h3>
+                {event.title}
+              </h3>
 
-<p className="text-neutral-700 text-sm mb-2">
-  {event.shortDesc}
-</p>
+              <p className="text-neutral-700 text-sm mb-2">
+                {event.shortDesc}
+              </p>
 
-{/* 📅 Date */}
-<p className="text-xs text-neutral-600 flex items-center gap-1 mb-1">
-  <span>📅</span>
-  <span>{event.date}</span>
-</p>
+              <p className="text-xs text-neutral-600 flex items-center gap-1 mb-1">
+                <span>📅</span>
+                <span>{event.date}</span>
+              </p>
 
-{/* 📍 Venue */}
-<p className="text-xs text-neutral-600 flex items-center gap-1 line-clamp-1">
-  <span>📍</span>
-  <span>{event.venue}</span>
-</p>
-
+              <p className="text-xs text-neutral-600 flex items-center gap-1 line-clamp-1">
+                <span>📍</span>
+                <span>{event.venue}</span>
+              </p>
             </div>
           ))}
         </div>
 
-        {/* ---------------- MODAL ---------------- */}
         {mounted &&
           selectedEvent &&
           createPortal(
@@ -135,7 +121,6 @@ export default function EventPage() {
                   animate ? "scale-100 opacity-100" : "scale-95 opacity-0"
                 }`}
               >
-                {/* Close */}
                 <button
                   onClick={() => setSelectedEvent(null)}
                   className="absolute top-4 right-4 text-xl text-neutral-500 hover:text-red-500"
@@ -143,54 +128,40 @@ export default function EventPage() {
                   ✕
                 </button>
 
-                {/* Title */}
                 <h2 className="text-xl md:text-2xl font-semibold text-[#0F9D58] mb-4">
                   {selectedEvent.title}
                 </h2>
 
-                {/* Event Details */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 text-sm">
                   <div>
                     <p className="font-semibold">📅 Date</p>
-                    <p className="text-neutral-600">
-                      {selectedEvent.date}
-                    </p>
+                    <p className="text-neutral-600">{selectedEvent.date}</p>
                   </div>
 
                   <div>
                     <p className="font-semibold">⏰ Time</p>
-                    <p className="text-neutral-600">
-                      {selectedEvent.time}
-                    </p>
+                    <p className="text-neutral-600">{selectedEvent.time}</p>
                   </div>
 
                   <div>
                     <p className="font-semibold">📍 Venue</p>
-                    <p className="text-neutral-600">
-                      {selectedEvent.venue}
-                    </p>
+                    <p className="text-neutral-600">{selectedEvent.venue}</p>
                   </div>
 
                   <div>
                     <p className="font-semibold">🎤 Speakers</p>
                     <ul className="list-disc list-inside text-neutral-600">
-                      {selectedEvent.speakers.map(
-                        (sp: string, i: number) => (
-                          <li key={i}>{sp}</li>
-                        )
-                      )}
+                      {selectedEvent.speakers.map((sp, i) => (
+                        <li key={i}>{sp}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
-                {/* Description */}
                 <p className="text-neutral-700 leading-relaxed mb-6">
                   {selectedEvent.fullDesc}
                 </p>
 
-            
-
-                {/* Report */}
                 <a
                   href={selectedEvent.report}
                   download
@@ -199,7 +170,6 @@ export default function EventPage() {
                   Download Event Report
                 </a>
 
-                {/* Image Slider */}
                 <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden bg-black">
                   <Image
                     src={selectedEvent.images[currentIndex]}
@@ -223,9 +193,8 @@ export default function EventPage() {
                   </button>
                 </div>
 
-                {/* Dots */}
                 <div className="flex justify-center gap-2 mt-4">
-                  {selectedEvent.images.map((_: any, i: number) => (
+                  {selectedEvent.images.map((_, i) => (
                     <span
                       key={i}
                       className={`h-2 w-2 rounded-full ${

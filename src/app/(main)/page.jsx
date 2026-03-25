@@ -1,11 +1,11 @@
-import Footer from "@/app/components/Footer";
-import { Navbar } from "@/app/components/Navbar";
-import MemberCard from "@/app/components/Team";
-import Event from "@/app/components/Event";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Hero from "../components/Hero";
-import GFGSeparator from "../components/GFGSeparator";
+import Footer from "@/app/components/layout/Footer";
+import { Navbar } from "@/app/components/layout/Navbar";
+import MemberCard from "@/app/components/cards/Team";
+import Event from "@/app/components/sections/Event";
+import About from "../components/sections/About";
+import Contact from "../components/sections/Contact";
+import Hero from "../components/sections/Hero";
+import GFGSeparator from "../components/ui/GFGSeparator";
 
 
 

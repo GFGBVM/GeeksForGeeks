@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import "./globals.css";
-import IntroLoader from "./components/IntroLoader";
-import { Navbar } from "./components/Navbar"; // ✅ ADD THIS
+import IntroLoader from "./components/ui/IntroLoader";
+import { Navbar } from "./components/layout/Navbar";
 import { Dancing_Script, Roboto, Montserrat } from "next/font/google";
 
 /* Roboto */
@@ -28,7 +27,7 @@ const dancing = Dancing_Script({
   display: "swap",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "GFG BVM 2025",
   description:
     "Join the GeeksforGeeks student chapter at BVM for an interactive workshop where you'll learn problem-solving techniques, practical coding patterns, and build portfolio-worthy projects.",
@@ -37,11 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
@@ -54,9 +49,9 @@ export default function RootLayout({
       >
         <IntroLoader />
 
- 
+        {/* Optional Navbar (if needed globally) */}
+        {/* <Navbar /> */}
 
-        {/* ✅ OFFSET FOR FIXED NAVBAR */}
         <div className="page-content">
           {children}
         </div>
