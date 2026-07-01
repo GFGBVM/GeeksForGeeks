@@ -11,6 +11,7 @@ import {
   IconHistory,
   IconX,
   IconMenu,
+  IconBriefcase,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,13 +22,42 @@ export function Navbar() {
   const [isMobileFlashbackOpen, setIsMobileFlashbackOpen] = useState(false);
 
   const baseNavItems = [
-    { name: "Home", link: "#Home", icon: <IconHome className="h-5 w-5" /> },
-    { name: "About Us", link: "#About", icon: <IconUser className="h-5 w-5" /> },
-    { name: "Events", link: "#Event", icon: <IconCalendarEvent className="h-5 w-5" /> },
-    { name: "Team", link: "#Team", icon: <IconUsers className="h-5 w-5" /> },
-    { name: "BR Team", link: "/BRTeam", icon: <IconUsers className="h-5 w-5" /> },
-    { name: "Contact Us", link: "#Contact", icon: <IconMessage className="h-5 w-5" /> },
-  ];
+  {
+    name: "Home",
+    link: "#Home",
+    icon: <IconHome className="h-5 w-5" />,
+  },
+  {
+    name: "About Us",
+    link: "#About",
+    icon: <IconUser className="h-5 w-5" />,
+  },
+  {
+    name: "Events",
+    link: "#Event",
+    icon: <IconCalendarEvent className="h-5 w-5" />,
+  },
+  {
+    name: "Team",
+    link: "#Team",
+    icon: <IconUsers className="h-5 w-5" />,
+  },
+  {
+    name: "Recruitment",
+    link: "/recruitment",
+    icon: <IconBriefcase className="h-5 w-5" />,
+  },
+  {
+    name: "BR Team",
+    link: "/BRTeam",
+    icon: <IconUsers className="h-5 w-5" />,
+  },
+  {
+    name: "Contact Us",
+    link: "#Contact",
+    icon: <IconMessage className="h-5 w-5" />,
+  },
+];
 
   const flashbackItems = [
     { label: "2022–23", url: "https://gfgbvm.github.io/gfgweb/core-team-2022/index.html" },
