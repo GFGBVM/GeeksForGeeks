@@ -9,12 +9,13 @@ import {
   Code2,
   Link2,
   PenLine,
+  Info,
 } from "lucide-react";
 import { QUESTIONS } from "../constants/questions";
 import { SpotlightCard } from "./effects";
 
 const ROLE_META = {
-  "Event & Operations Head": {
+  "Operations & Outreach Head": {
     icon: CalendarDays,
     accent: "text-sky-300",
     chip: "bg-sky-500/15 ring-sky-400/20",
@@ -26,17 +27,17 @@ const ROLE_META = {
     chip: "bg-pink-500/15 ring-pink-400/20",
     bar: "bg-pink-400/70",
   },
-  "Public Relations & Outreach Head": {
-    icon: Users,
-    accent: "text-orange-300",
-    chip: "bg-orange-500/15 ring-orange-400/20",
-    bar: "bg-orange-400/70",
-  },
   "Social Media & Promotion Head": {
     icon: Megaphone,
     accent: "text-violet-300",
     chip: "bg-violet-500/15 ring-violet-400/20",
     bar: "bg-violet-400/70",
+  },
+  "BR Head": {
+    icon: Users,
+    accent: "text-emerald-300",
+    chip: "bg-emerald-500/15 ring-emerald-400/20",
+    bar: "bg-emerald-400/70",
   },
 };
 
@@ -92,14 +93,34 @@ export default function ProofOfWork({ formData, setFormData }) {
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/20">
             <Code2 size={20} />
           </span>
-          Proof of Work
+          Additional Information
         </h2>
-        <p className="mt-1 text-sm text-zinc-400">
-          Based on your selected preferences, answer the following.{" "}
+
+        <p className="mt-2 text-sm text-zinc-400">
+          Share any relevant experience, portfolio links, or responses based on
+          your selected preferences.
           <span className="font-medium text-emerald-300">
+            {" "}
             All fields are optional.
           </span>
         </p>
+
+        <div className="mt-5 rounded-xl border border-amber-400/20 bg-amber-500/10 p-4">
+          <div className="flex items-center gap-2 text-amber-300">
+            <Info size={18} />
+            <h4 className="font-semibold">Interview Preparation</h4>
+          </div>
+
+          <p className="mt-2 text-sm leading-6 text-zinc-300">
+            Your responses will be reviewed by the interview panel and may be
+            discussed during your interview. Please answer thoughtfully and be
+            prepared to explain your ideas, experiences, and responses.
+            <span className="font-medium text-emerald-300">
+              {" "}
+              We wish you the very best of luck!
+            </span>
+          </p>
+        </div>
       </div>
 
       <div className="relative z-10 p-8">
@@ -126,8 +147,12 @@ export default function ProofOfWork({ formData, setFormData }) {
                     meta?.chip ?? "bg-emerald-500/15 ring-emerald-400/20"
                   }`}
                 >
-                  <Icon size={18} className={meta?.accent ?? "text-emerald-300"} />
+                  <Icon
+                    size={18}
+                    className={meta?.accent ?? "text-emerald-300"}
+                  />
                 </span>
+
                 {post}
               </h3>
 
@@ -145,6 +170,7 @@ export default function ProofOfWork({ formData, setFormData }) {
                         className="mt-0.5 shrink-0 text-zinc-500"
                       />
                     )}
+
                     <span className="whitespace-pre-line leading-relaxed">
                       {item.question}
                     </span>
@@ -167,7 +193,7 @@ export default function ProofOfWork({ formData, setFormData }) {
                       onChange={(e) =>
                         handleAnswerChange(post, item.question, e.target.value)
                       }
-                      placeholder="Paste your link..."
+                      placeholder="Paste a portfolio, Google Drive, or any relevant link (optional)..."
                       className={fieldClass}
                     />
                   )}

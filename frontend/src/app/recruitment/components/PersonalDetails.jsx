@@ -20,7 +20,7 @@ const DEPARTMENTS = [
   "Mechanical Engineering",
   "Civil Engineering",
   "Electronics Engineering",
-  "Production Engineering" ,
+  "Production Engineering",
 ];
 
 const YEARS = ["1st", "2nd", "3rd", "4th"];
@@ -136,9 +136,11 @@ export default function PersonalDetails({ formData, setFormData }) {
               onChange={handleChange}
               className={`peer ${inputClass} appearance-none`}
             >
-              <option value="">Select Department</option>
+              <option value="" className="bg-[#05080a] text-zinc-400">
+                Select Department
+              </option>
               {DEPARTMENTS.map((dept) => (
-                <option key={dept} value={dept}>
+                <option key={dept} value={dept} className="bg-[#05080a] text-zinc-100">
                   {dept}
                 </option>
               ))}
@@ -186,13 +188,13 @@ export default function PersonalDetails({ formData, setFormData }) {
             <GraduationCap size={16} className="text-zinc-500" />
             Current Year <span className="text-emerald-400">*</span>
           </label>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
             {YEARS.map((year) => {
               const checked = formData.year === year;
               return (
                 <label
                   key={year}
-                  className={`flex cursor-pointer items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-medium transition-all ${
+                  className={`flex cursor-pointer items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-medium transition-all ${
                     checked
                       ? "border-emerald-400/50 bg-emerald-500/15 text-emerald-200 shadow-[0_0_14px_rgba(16,185,129,0.25)]"
                       : "border-white/10 bg-white/[0.02] text-zinc-400 hover:border-emerald-400/30 hover:text-zinc-200"

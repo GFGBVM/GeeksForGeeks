@@ -255,6 +255,16 @@ export default function RecruitmentPage() {
                             94271 07324
                           </p>
                         </div>
+                        <div>
+                          <p className="font-semibold text-white">Haraprasad Mahapatra</p>
+                          <p className="text-xs font-medium uppercase tracking-wide text-emerald-300/70">
+                            Technical Head
+                          </p>
+                          <p className="mt-1 flex items-center gap-1.5 text-sm text-zinc-300">
+                            <Phone size={13} className="text-emerald-400" /> +91
+                            9537362412
+                          </p>
+                        </div>
                         <div className="h-px w-full bg-white/5" />
                         <div>
                           <p className="font-semibold text-white">

@@ -12,31 +12,34 @@ import {
   Check,
 } from "lucide-react";
 import { SpotlightCard } from "./effects";
-
 const POSTS = [
-  "Event & Operations Head",
+  "Operations & Outreach Head",
   "Design & Creative Head",
-  "Public Relations & Outreach Head",
   "Social Media & Promotion Head",
+  "BR Head",
 ];
 
 const ROLE_DETAILS = [
   {
-    title: "Event & Operations Head",
+    title: "Operations & Outreach Head",
     icon: CalendarDays,
     accent: "text-sky-300",
     ring: "ring-sky-400/20",
     chip: "bg-sky-500/15",
     bar: "from-sky-400 to-blue-500",
-    glow: "hover:shadow-[0_0_30px_-8px_rgba(56,189,248,0.5)] hover:border-sky-400/40",
-    description: "Plan, organize and execute all chapter events efficiently.",
+    glow:
+      "hover:shadow-[0_0_30px_-8px_rgba(56,189,248,0.5)] hover:border-sky-400/40",
+    description:
+      "Plan, organize, and execute chapter events while building strong relationships with students, faculty, and industry partners.",
     responsibilities: [
-      "Manage event logistics",
-      "Coordinate with faculty & volunteers",
-      "Ensure smooth event execution",
+      "Plan and manage chapter events efficiently",
+      "Coordinate with faculty, speakers, and volunteers",
+      "Build collaborations with clubs, communities, and sponsors",
     ],
-    skills: "Leadership, Planning, Communication",
+    skills:
+      "Leadership, Communication, Event Management, Networking",
   },
+
   {
     title: "Design & Creative Head",
     icon: Palette,
@@ -44,33 +47,19 @@ const ROLE_DETAILS = [
     ring: "ring-pink-400/20",
     chip: "bg-pink-500/15",
     bar: "from-pink-400 to-fuchsia-500",
-    glow: "hover:shadow-[0_0_30px_-8px_rgba(244,114,182,0.5)] hover:border-pink-400/40",
+    glow:
+      "hover:shadow-[0_0_30px_-8px_rgba(244,114,182,0.5)] hover:border-pink-400/40",
     description:
-      "Create visually appealing content that represents the GFG chapter.",
+      "Create visually appealing content that represents the GFG chapter and strengthens its brand identity.",
     responsibilities: [
-      "Design posters & certificates",
-      "Create presentations",
-      "Maintain chapter branding",
+      "Design posters, certificates, and promotional graphics",
+      "Create presentations and event branding materials",
+      "Maintain a consistent visual identity across all platforms",
     ],
-    skills: "Canva, Figma, Creativity",
+    skills:
+      "Canva, Figma, Creativity, Graphic Design",
   },
-  {
-    title: "Public Relations & Outreach Head",
-    icon: Users,
-    accent: "text-orange-300",
-    ring: "ring-orange-400/20",
-    chip: "bg-orange-500/15",
-    bar: "from-orange-400 to-amber-500",
-    glow: "hover:shadow-[0_0_30px_-8px_rgba(251,146,60,0.5)] hover:border-orange-400/40",
-    description:
-      "Build collaborations and strengthen the chapter's external network.",
-    responsibilities: [
-      "Connect with clubs & communities",
-      "Coordinate guest speakers",
-      "Manage official communications",
-    ],
-    skills: "Networking, Communication, Confidence",
-  },
+
   {
     title: "Social Media & Promotion Head",
     icon: Megaphone,
@@ -78,15 +67,38 @@ const ROLE_DETAILS = [
     ring: "ring-violet-400/20",
     chip: "bg-violet-500/15",
     bar: "from-violet-400 to-purple-500",
-    glow: "hover:shadow-[0_0_30px_-8px_rgba(167,139,250,0.5)] hover:border-violet-400/40",
+    glow:
+      "hover:shadow-[0_0_30px_-8px_rgba(167,139,250,0.5)] hover:border-violet-400/40",
     description:
-      "Increase the online presence of the chapter through engaging content.",
+      "Promote chapter activities through engaging content and strategic campaigns to maximize reach and participation.",
     responsibilities: [
-      "Manage Instagram & LinkedIn",
-      "Publish event updates",
-      "Promote chapter activities",
+      "Manage social media platforms and promotional campaigns",
+      "Create and schedule engaging posts for events and announcements",
+      "Curate relevant technical and community content for social media (Content Curation)",
+      "Monitor engagement and increase the chapter's online presence",
     ],
-    skills: "Content Creation, Social Media, Marketing",
+    skills:
+      "Content Creation, Social Media Management, Copywriting, Marketing",
+  },
+
+  {
+    title: "BR Head",
+    icon: Users,
+    accent: "text-emerald-300",
+    ring: "ring-emerald-400/20",
+    chip: "bg-emerald-500/15",
+    bar: "from-emerald-400 to-green-500",
+    glow:
+      "hover:shadow-[0_0_30px_-8px_rgba(16,185,129,0.5)] hover:border-emerald-400/40",
+    description:
+      "Coordinate with Branch Representatives to ensure smooth communication, maximum outreach, and active participation across all departments.",
+    responsibilities: [
+      "Manage and coordinate Branch Representatives from all branches",
+      "Ensure announcements, event updates, and important information reach every branch effectively",
+      "Monitor branch-wise engagement and encourage participation in chapter activities",
+    ],
+    skills:
+      "Leadership, Communication, Coordination, Team Management",
   },
 ];
 

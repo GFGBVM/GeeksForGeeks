@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2";
 import {
   ClipboardCheck,
   User,
@@ -44,7 +45,6 @@ export default function ReviewSubmit({ formData, previousStep, onSuccess }) {
   const handleSubmit = async () => {
     try {
       setLoading(true);
-      console.log(formData);
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/recruitment/apply`,
         formData
@@ -54,11 +54,14 @@ export default function ReviewSubmit({ formData, previousStep, onSuccess }) {
         onSuccess();
       }
     } catch (err) {
-      console.error(err);
-      alert(
-        err.response?.data?.message ||
-          "Something went wrong. Please try again."
-      );
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: err.response?.data?.message || "Something went wrong. Please try again.",
+        confirmButtonColor: "#10b981", // Matches your emerald-500 theme
+        background: "#18181b", // Dark theme background
+        color: "#f4f4f5", // Light text
+      });
     } finally {
       setLoading(false);
     }

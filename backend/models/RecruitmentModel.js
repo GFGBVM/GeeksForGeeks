@@ -1,10 +1,10 @@
 const mongoose = require("../configuration/mongoose_config"); // Change the path as per your folder structure
 
 const POSTS = [
-  "Event & Operations Head",
+  "Operations & Outreach Head",
   "Design & Creative Head",
-  "Public Relations & Outreach Head",
   "Social Media & Promotion Head",
+  "BR Head",
 ];
 
 const responseSchema = new mongoose.Schema(
@@ -94,7 +94,6 @@ const recruitmentSchema = new mongoose.Schema(
     preferences: {
       type: [String],
       enum: POSTS,
-      default : "none" ,
       validate: {
         validator: function (arr) {
           return (arr.length <= 3 )&& new Set(arr).size === 3;

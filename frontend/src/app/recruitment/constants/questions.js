@@ -1,18 +1,18 @@
 export const QUESTIONS = {
-  "Event & Operations Head": [
+  "Operations & Outreach Head": [
     {
       question:
-        "If you have previously organized, coordinated, or volunteered in any event, share a Google Drive folder containing relevant photographs, certificates, documents, or any proof of your contribution (optional).",
+        "If you have previously organized, coordinated, volunteered in events, or worked on collaborations, outreach, or sponsorships, share a Google Drive folder containing relevant photographs, certificates, documents, or any proof of your contribution (optional).",
       type: "text",
     },
     {
       question:
-        "Imagine that a technical workshop is scheduled to begin in 30 minutes, but the speaker informs you at the last moment that they won't be able to attend. As the Event & Operations Head, how would you handle the situation to ensure the event remains successful?",
+        "Imagine a technical workshop is scheduled to begin in 30 minutes, but the speaker informs you at the last moment that they won't be able to attend. As the Operations & Outreach Head, how would you handle the situation while coordinating with faculty, volunteers, and participants to ensure the event remains successful?",
       type: "textarea",
     },
     {
       question:
-        "If selected as the Event & Operations Head, describe one technical or community event you would like to organize under the GFG BVM Student Chapter. Explain your idea, objectives, and why students would find it valuable.",
+        "If selected as the Operations & Outreach Head, describe one technical or community event you would like to organize under the GFG BVM Student Chapter. Explain its objectives, execution plan, and how you would collaborate with clubs, faculty, or industry partners to maximize its impact.",
       type: "textarea",
     },
   ],
@@ -25,7 +25,7 @@ export const QUESTIONS = {
     },
     {
       question:
-        `Design Challenge – GFG BVM Core Team Recruitment 2026–27
+        `Recommended Design Challenge (Completing this challenge will significantly increase your chances of selection.)
 
 Design a promotional poster announcing the GFG BVM Student Chapter Core Team Recruitment 2026–27.
 
@@ -44,19 +44,6 @@ Share the Google Drive link containing your completed design.`,
     },
   ],
 
-  "Public Relations & Outreach Head": [
-    {
-      question:
-        "If you have any prior experience in sponsorships, outreach, public relations, club coordination, event partnerships, or communication with organizations, share relevant documents or a Google Drive folder as proof (optional).",
-      type: "text",
-    },
-    {
-      question:
-        "Suppose a reputed company initially agrees to sponsor a GFG event but withdraws just three days before the event. As the Public Relations & Outreach Head, how would you approach the situation? Explain your communication strategy and the steps you would take to secure an alternative sponsor or minimize the impact.",
-      type: "textarea",
-    },
-  ],
-
   "Social Media & Promotion Head": [
     {
       question:
@@ -65,8 +52,16 @@ Share the Google Drive link containing your completed design.`,
     },
     {
       question:
-        "Imagine GFG BVM is organizing a 3-day coding competition, but registrations remain very low even after the initial announcement. As the Social Media & Promotion Head, describe your complete promotional strategy. Explain what type of content you would create, which platforms you would use, how frequently you would post, and how you would ensure maximum student participation.",
+        "Imagine GFG BVM is organizing a 3-day coding competition, but registrations remain low after the initial announcement. As the Social Media & Promotion Head, describe your complete promotional strategy. Explain how you would manage social media platforms, create and schedule engaging content, curate relevant technical or community content, and increase the chapter's online reach and participation.",
       type: "textarea",
     },
   ],
+
+  "BR Head": [
+  {
+    question:
+      "Briefly describe any past experience you have as a Class Representative, Branch Representative, club coordinator, student volunteer, or in any other leadership role. Mention your responsibilities and key contributions (optional).",
+    type: "textarea",
+  },
+],
 };
