@@ -38,34 +38,3 @@ export const initMagneticEffect = (element, strength = 0.3) => {
     element.removeEventListener('mouseleave', handleMouseLeave);
   };
 };
-
-/**
- * Custom Cursor Tracker
- */
-export const initCustomCursor = (cursorDot, cursorRing) => {
-  if (!cursorDot || !cursorRing) return;
-
-  const onMouseMove = (e) => {
-    const { clientX, clientY } = e;
-
-    gsap.to(cursorDot, {
-      x: clientX,
-      y: clientY,
-      duration: 0.1,
-      ease: 'power2.out',
-    });
-
-    gsap.to(cursorRing, {
-      x: clientX,
-      y: clientY,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  };
-
-  window.addEventListener('mousemove', onMouseMove);
-
-  return () => {
-    window.removeEventListener('mousemove', onMouseMove);
-  };
-};

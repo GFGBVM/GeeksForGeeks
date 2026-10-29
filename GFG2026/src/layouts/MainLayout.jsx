@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import LoadingScreen from "../components/loader/LoadingScreen";
-import CustomCursor from "../components/common/CustomCursor";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 
@@ -63,12 +62,6 @@ const MainLayout = ({ children }) => {
 
   return (
     <>
-      {/* =====================================================
-          CUSTOM CURSOR
-      ===================================================== */}
-
-      <CustomCursor />
-
       {/* =====================================================
           LOADING SCREEN
       ===================================================== */}

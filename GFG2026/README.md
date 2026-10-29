@@ -52,7 +52,6 @@ gfg-bvm-2026/
 │   │   │   ├── MagneticButton.jsx
 │   │   │   ├── AnimatedText.jsx
 │   │   │   ├── Marquee.jsx
-│   │   │   └── CustomCursor.jsx
 │   │   │
 │   │   ├── navbar/
 │   │   │   ├── Navbar.jsx
