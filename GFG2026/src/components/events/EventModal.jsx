@@ -147,7 +147,7 @@ const EventModal = ({ event, isOpen, onClose }) => {
           </h2>
 
           {/* Main Description */}
-          <p className="mt-5 text-sm leading-relaxed text-[#4B6354] sm:text-base">
+          <p className="mt-5 whitespace-pre-line text-sm leading-relaxed text-[#4B6354] sm:text-base">
             {event.description}
           </p>
 
@@ -196,6 +196,18 @@ const EventModal = ({ event, isOpen, onClose }) => {
 
           {/* Action Callouts */}
           <div className="mt-8 flex flex-wrap gap-3">
+            {event.registrationUrl && (
+              <a
+                href={event.registrationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2.5 rounded-full bg-[#1E513B] px-6 py-3.5 font-montserrat text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-[#286E50] hover:shadow-[0_8px_25px_rgba(30,81,59,0.3)]"
+              >
+                Register
+                <ArrowUpRight size={16} />
+              </a>
+            )}
+
             {event.report && (
               <a
                 href={event.report}

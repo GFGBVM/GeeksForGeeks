@@ -5,7 +5,6 @@ import siteData from "../../data/site";
 
 import Container from "../common/Container";
 import SectionHeading from "../common/SectionHeading";
-import AboutStats from "./AboutStats";
 
 import { initAboutAnimation } from "./AboutAnimation";
 import { scrollToSection } from "../../utils/scrollToSection";
@@ -362,11 +361,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* ===================================================
-            DYNAMIC CHAPTER METRICS
-        =================================================== */}
-
-        <AboutStats />
       </Container>
     </section>
   );
