@@ -179,14 +179,6 @@ export const initAboutAnimation = (section) => {
       });
     }
 
-    if (circle) {
-      gsap.to(circle, {
-        rotation: 360,
-        duration: 35,
-        repeat: -1,
-        ease: "none",
-      });
-    }
   }, section);
 
   return () => ctx.revert();

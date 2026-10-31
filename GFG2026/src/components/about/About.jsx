@@ -141,22 +141,6 @@ const About = () => {
                 shadow-xl
               "
             >
-              {/* Green ambient circle */}
-              <div
-                className="
-                  about-circle
-                  absolute
-                  left-1/2
-                  top-1/2
-                  h-[70%]
-                  w-[70%]
-                  -translate-x-1/2
-                  -translate-y-1/2
-                  rounded-full
-                  bg-[#1E513B]
-                "
-              />
-
               {/* Official GFG BVM Logo */}
               <div
                 className="
@@ -193,6 +177,8 @@ const About = () => {
                   className="
                     h-full
                     w-full
+                    rounded-full
+                    bg-white
                     object-contain
                   "
                 />

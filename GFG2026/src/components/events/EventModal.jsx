@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { ArrowDownToLine, ArrowUpRight, Users, X } from "lucide-react";
 import gsap from "gsap";
 import EventGallery from "./EventGallery";
@@ -18,16 +19,31 @@ const EventModal = ({ event, isOpen, onClose }) => {
   useEffect(() => {
     if (!isOpen || !event) return;
 
-    // Pause Lenis (if present) so that the modal can control scrolling independently
-    try {
-      if (window.__LENIS && typeof window.__LENIS.stop === "function") {
-        window.__LENIS.stop();
-      }
-    } catch (e) {}
+    const body = document.body;
+    const html = document.documentElement;
+    const scrollY = window.scrollY;
+    const previousBodyStyles = {
+      overflow: body.style.overflow,
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      right: body.style.right,
+      width: body.style.width,
+    };
+    const previousHtmlOverflow = html.style.overflow;
 
-    // Save current body style to restore cleanly
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    document.body.style.overflow = "hidden";
+    // Pause smooth scrolling and pin the page beneath the modal.
+    if (typeof window.__LENIS?.stop === "function") {
+      window.__LENIS.stop();
+    }
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
 
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -58,14 +74,19 @@ const EventModal = ({ event, isOpen, onClose }) => {
     }, modalRef);
 
     return () => {
-      document.body.style.overflow = originalStyle;
+      body.style.overflow = previousBodyStyles.overflow;
+      body.style.position = previousBodyStyles.position;
+      body.style.top = previousBodyStyles.top;
+      body.style.left = previousBodyStyles.left;
+      body.style.right = previousBodyStyles.right;
+      body.style.width = previousBodyStyles.width;
+      html.style.overflow = previousHtmlOverflow;
+      window.scrollTo(0, scrollY);
 
       // Resume Lenis after modal closes
-      try {
-        if (window.__LENIS && typeof window.__LENIS.start === "function") {
-          window.__LENIS.start();
-        }
-      } catch (e) {}
+      if (typeof window.__LENIS?.start === "function") {
+        window.__LENIS.start();
+      }
 
       ctx.revert();
     };
@@ -93,10 +114,10 @@ const EventModal = ({ event, isOpen, onClose }) => {
       ? [event.coverImage] 
       : [];
 
-  return (
+  return createPortal(
     <div
       ref={modalRef}
-      className="fixed inset-0 z-[5000] flex items-center justify-center p-3 select-none sm:p-5 lg:p-8"
+      className="fixed inset-0 z-[5000] flex items-start justify-center overflow-hidden px-3 pt-24 pb-3 select-none sm:px-5 sm:pb-5 lg:items-center lg:p-8"
     >
       {/* Backdrop Overlay */}
       <div
@@ -108,7 +129,8 @@ const EventModal = ({ event, isOpen, onClose }) => {
       {/* Modal Container */}
       <div
         ref={contentRef}
-        className="relative z-10 flex max-h-[90vh] w-full max-w-6xl flex-col overflow-y-auto overscroll-contain rounded-3xl bg-white shadow-[0_40px_120px_rgba(13,31,21,0.25)] [webkit-overflow-scrolling:touch] lg:flex-row lg:overflow-hidden"
+        className="relative z-10 flex max-h-[calc(100dvh_-_6.75rem)] w-full max-w-6xl touch-pan-y flex-col overflow-y-auto overscroll-contain rounded-3xl bg-white shadow-[0_40px_120px_rgba(13,31,21,0.25)] lg:max-h-[90vh] lg:flex-row lg:overflow-hidden"
+        style={{ WebkitOverflowScrolling: "touch" }}
       >
         {/* Close Button */}
         <button
@@ -126,7 +148,7 @@ const EventModal = ({ event, isOpen, onClose }) => {
         </div>
 
         {/* Right Column: Detailed Description & Metadata */}
-        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto p-6 sm:p-8 lg:p-10" style={{ WebkitOverflowScrolling: 'touch' }}>
+        <div className="flex flex-col p-6 sm:p-8 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:p-10">
           {/* Tag Badges */}
           {event.tags?.length > 0 && (
             <div className="mb-5 flex flex-wrap gap-2">
@@ -230,7 +252,8 @@ const EventModal = ({ event, isOpen, onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 
